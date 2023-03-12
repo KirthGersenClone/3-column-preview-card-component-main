@@ -1,0 +1,161 @@
+@import url("./normalize.css");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  font-size: 15px;
+  /* ## Colors */
+  /* ### Primary */
+  --kl-oranje--: hsl(31, 77%, 52%);
+  --kl-cyaan-licht-: hsl(184, 100%, 22%);
+  --kl-cyaan-donker-: hsl(179, 100%, 13%);
+  /* ### Neutral */
+  --kl-wit-transparant-: hsla(0, 0%, 100%, 0.75);
+  /* Achtergrond, hoofding en buttons */
+  --kl-grijs-licht-: hsl(0, 0%, 95%);
+}
+body {
+  font-family: "Lexend Deca", sans-serif;
+  background-color: var(--kl-wit-transparant-);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  max-width: 375px;
+  max-height: 956px;
+  background-color: var(--kl-grijs-licht-);
+  margin: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+/**
+In the HTML, we have a container element that includes the image and an empty div element for the overlay. 
+We set the position of the container to relative so that we can position the overlay on top of the image using absolute positioning.
+
+In the CSS, we set the position of the overlay to absolute and the top, left, width, and height properties to 0 to make it cover the entire image. 
+We set the background-color of the overlay to  hsla(277, 64%, 61%, 0.5) which creates a transparent violet color. 
+You can adjust the alpha value (the last parameter) to control the opacity of the overlay. **/
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+.flex-child-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 0 2rem;
+}
+h2 {
+  font-family: "Big Shoulders Display", cursive;
+  color: var(--kl-grijs-licht-);
+}
+#sedans {
+  background-color: var(--kl-oranje--);
+  color: var(--kl-wit-transparant-);
+  flex-basis: 19rem;
+}
+#suv {
+  background-color: var(--kl-cyaan-licht-);
+  color: var(--kl-wit-transparant-);
+  flex-basis: 19rem;
+}
+#luxury {
+  background-color: var(--kl-cyaan-donker-);
+  color: var(--kl-wit-transparant-);
+  flex-basis: 19rem;
+}
+.btn {
+  background-color: var(--kl-grijs-licht-);
+  border-style: none;
+  border-radius: 90px;
+  padding: 1.1rem;
+  margin: 1rem 0;
+}
+
+#btn-sedans {
+  color: var(--kl-oranje--);
+}
+#btn-sedans.btn:is(:hover, :focus) {
+  cursor: pointer;
+  background-color: var(--kl-oranje--);
+  color: var(--kl-wit-transparant-);
+  border: 1px solid white;
+}
+#btn-suvs {
+  color: var(--kl-cyaan-licht-);
+}
+#btn-suvs.btn:is(:hover, :focus) {
+  cursor: pointer;
+  background-color: var(--kl-cyaan-licht-);
+  color: var(--kl-wit-transparant-);
+  border: 1px solid white;
+}
+#btn-luxury {
+  color: var(--kl-cyaan-donker-);
+}
+#btn-luxury.btn:is(:hover, :focus) {
+  cursor: pointer;
+  background-color: var(--kl-cyaan-donker-);
+  color: var(--kl-wit-transparant-);
+  border: 1px solid white;
+}
+
+/** Bij @media de afbeelding een order geven hoger dan de tekst **/
+@media screen and (min-width: 800px) {
+  main {
+    max-width: 1440px;
+    max-height: 800px;
+    background-color: var(--kl-grijs-licht-);
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .flex-child-container {
+    padding-top: 2.8rem;
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+    gap: 2.25rem;
+  }
+  #sedans {
+    background-color: var(--kl-oranje--);
+    color: var(--kl-wit-transparant-);
+    flex-basis: 20.5rem;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+  }
+  #suv {
+    background-color: var(--kl-cyaan-licht-);
+    color: var(--kl-wit-transparant-);
+    flex-basis: 20.5rem;
+  }
+  #luxury {
+    background-color: var(--kl-cyaan-donker-);
+    color: var(--kl-wit-transparant-);
+    flex-basis: 20.5rem;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+  }
+  p {
+    line-height: 1.5;
+    padding-bottom: 2.5rem;
+    padding-right: 1.5rem;
+  }
+  h2 {
+    font-size: 2.75rem;
+    text-transform: uppercase;
+  }
+  .btn {
+    background-color: var(--kl-grijs-licht-);
+    border: 1px solid transparent;
+    border-radius: 90px;
+    padding: 1.1rem 2rem;
+    margin: 1rem 0;
+  }
+}
